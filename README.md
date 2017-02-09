@@ -1,6 +1,6 @@
 # Introduction
 
-This plugin completes keywords in Vim command line.
+This plugin completes keywords in Vim `Cmdline mode` (a.k.a. `Command-line mode`).
 
 # Install
 
@@ -17,7 +17,7 @@ matched keywords found in the current buffer and $MYVIMRC (not supported if Vim 
 `+python` support), if any.
 
 If you want to use other keys instead of default `<C-j>` `<C-k>` to trigger the completion, please
-define them in $MYVIMRC as follows:
+define them in `$MYVIMRC` as follows:
 
     cmap <c-p> <Plug>CmdlineCompleteBackward
     cmap <c-n> <Plug>CmdlineCompleteForward
