@@ -1,7 +1,7 @@
 "***************************************************************************************************
 " File:            commandline_complete.vim
 "
-" Version:         0.5.0 
+" Version:         0.5.0
 "
 " Author:          Jia Shi <j5shi.vip@gmail.com>
 "
@@ -10,7 +10,7 @@
 " License:         The VIM License
 "
 " Usage:           When editing the command-line, press <c-j> or <c-k> to complete
-"                  the word before the cursor with the matched keywords found in 
+"                  the word before the cursor with the matched keywords found in
 "                  the current buffer and $MYVIMRC, if any.
 "
 "                  If you want to use other keys instead of default <c-j> <c-k> to
@@ -21,7 +21,7 @@
 "
 "                  This will use <C-p> <C-n> to search backward and forward.
 "
-"                  Without python, the complete speed will be a bit slow with large 
+"                  Without python, the complete speed will be a bit slow with large
 "                  file (e.g. > 100K). Compile your vim with python is recommended.
 "***************************************************************************************************
 " Anti-reinclusion guards
@@ -320,7 +320,7 @@ function! s:CmdlineComplete(backward)
         let s:sought_fw       = 0
     endif
 
-    if (s:sought_bw + s:sought_fw <= line("$")) && 
+    if (s:sought_bw + s:sought_fw <= line("$")) &&
      \ ((a:backward && s:comp_i == 0) || !a:backward && (s:comp_i == len(s:completions) - 1))
         let success = 0
 
@@ -362,3 +362,5 @@ function! s:CmdlineComplete(backward)
 
     return substitute(old, ".", "\<c-h>", "g") . new
 endfunction
+
+let &cpo = s:save_cpo
